@@ -1,5 +1,7 @@
 package chap02;
 
+import static org.junit.jupiter.api.Assertions.*;
+
 import org.junit.jupiter.api.Test;
 
 public class PasswordStrengthMeterTest {
@@ -8,5 +10,7 @@ public class PasswordStrengthMeterTest {
 		PasswordStrengthMeter meter = new PasswordStrengthMeter();
 		PasswordStrength result = meter.meter("ab12!@AB");
 		assertEquals(PasswordStrength.STRONG, result);
+		PasswordStrength result2 = meter.meter("abc!Add");
+		assertEquals(PasswordStrength.STRONG, result2);
 	}
 }
